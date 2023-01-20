@@ -6,7 +6,7 @@ var tie = 0;
 
 var options = ["R", "P", "S"];
 
-// TODO: Prompt function to ask user to choose an option
+
 
 var startGame = function (){
     var userChoice = prompt("Please enter R, P, S");
@@ -14,40 +14,30 @@ var startGame = function (){
         return;
     }
     
+userChoice = userChoice.toUpperCase();
 
-    // TODO: need to generate random computer variable
-    var computerChoice = Math.floor(Math.random()*options.length);
-    console.log(options[computerChoice]);
-   alert("The computer chose " + options[computerChoice]);
+    
+    var randomIndex = Math.floor(Math.random()*options.length);
+    var computerChoice = options[randomIndex]
+    console.log(computerChoice);
+   alert("The computer chose " + computerChoice);
 
     if (userChoice == computerChoice) {
         tie++;
-        window.alert("YO!!!");
+      
     } else if (userChoice == "P" && computerChoice == "R") {
-        return wins++;
+         wins++;
     } else if (userChoice == "R" && computerChoice == "P") {
-        return losses++;
+         losses++;
     } else if (userChoice == "R" && computerChoice == "S") {
-        return wins++;
+         wins++;
     } else if (userChoice == "S" && computerChoice == "R") {
-        return losses++;
+         losses++;
     } else if (userChoice == "S" && computerChoice == "P") {
-        return wins++;
+         wins++;
     } else if (userChoice == "P" && computerChoice == "S") {
-        return losses++;
+        losses++;
     }
 
     alert("Wins "  + wins + " Losses " + losses + " Tie " + tie);
 }
-// startGame();
-        
-        
-    
-
-
-// TODO: ALert user who wins
-
-
-// TODO: create a way to keep score after every round (confirm?)
-
-// TODO: Prompt user if they want to play again
